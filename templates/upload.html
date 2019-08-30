@@ -10,5 +10,14 @@
         <input type="file" name="file">
         <input type="submit" value="上传">
     </form>
+
+<div class="container">
+    {% for message in get_flashed_messages() %}
+    <div class="alert alert-warning">
+   {{ message }}
+    </div>
+    {% endfor %}
+    {% block page_content %}{% endblock %}
+</div>
 </body>
 </html>
