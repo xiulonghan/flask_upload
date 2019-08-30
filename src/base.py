@@ -53,7 +53,7 @@ def upload():
 @app.route('/<filename>')
 def show_upload_file(filename):
     download_path = '../'
-    return send_from_directory(download_path, filename)
+    return send_from_directory(download_path, filename)  # as_attachment=True可以实现下载
 
 
 if __name__ == '__main__':
