@@ -7,7 +7,7 @@
     - python base.py
 - 运行结果
 
-![WeChat Screenshot_20190902111549](C:\Users\HXL\Desktop\WeChat Screenshot_20190902111549.png)
+![xx](https://wx1.sinaimg.cn/mw690/95eb00e6ly1g6l09fa6n0j20af05c0ss.jpg)
 
 网站请输入http://127.0.0.1:9991/upload
 
