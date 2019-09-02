@@ -12,7 +12,7 @@ import os
 # Third-party libraries
 from werkzeug.utils import secure_filename
 from flask import Flask, render_template, request, redirect, url_for, flash
-from flask import send_from_directory
+from flask import send_from_directory, jsonify
 
 
 upload_folder = './'  # 上传文件需要保存的目录
@@ -46,6 +46,7 @@ def upload():
         if f and allowed_file(f.filename):
             save_path = os.path.join(app.config['UPLOAD_FOLDER'], secure_filename(f.filename))
             f.save(save_path)
+            flash('Upload Success')
             return redirect(url_for('show_upload_file', filename=secure_filename(f.filename)))
     return render_template('upload.html')
 
@@ -58,7 +59,7 @@ def show_upload_file(filename):
     :return: 下载文件
     """
     download_path = '../'
-    return send_from_directory(download_path, filename, as_attachment=True)  # as_attachment=True可以实现下载
+    return send_from_directory(download_path, filename)  # as_attachment=True可以实现下载
 
 
 if __name__ == '__main__':
